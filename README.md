@@ -1,3 +1,5 @@
+### NOTE: This fork was created for backwards compatability with the Tufts Legacy TRDW (using SQL Server 2014)
+
 CohortDiagnostics
 =================
 
