@@ -1,4 +1,5 @@
 ### NOTE: This fork was created for backwards compatability with the Tufts Legacy TRDW (using SQL Server 2014)
+#### Unless your use case involves SQL Server 2014, you should use the [OHDSI CohortDiagnostics fork](https://github.com/TuftsCTSI/CohortDiagnostics/edit/main/README.md)
 
 CohortDiagnostics
 =================
