@@ -179,10 +179,14 @@ runCohortTimeSeriesDiagnostics <- function(connectionDetails = NULL,
   )
 
   tsSetUpSql <- "-- #time_series
-                DROP TABLE IF EXISTS #time_series;
-                DROP TABLE IF EXISTS #c_time_series1;
-                DROP TABLE IF EXISTS #c_time_series2;
-                DROP TABLE IF EXISTS #c_time_series3;"
+                IF OBJECT_ID('#time_series', 'U') IS NOT NULL
+              	DROP TABLE #time_series;
+                IF OBJECT_ID('#c_time_series1', 'U') IS NOT NULL
+              	DROP TABLE #c_time_series1;
+                IF OBJECT_ID('#c_time_series2', 'U') IS NOT NULL
+              	DROP TABLE #c_time_series2;
+                IF OBJECT_ID('#c_time_series3', 'U') IS NOT NULL
+              	DROP TABLE #c_time_series3;"
 
   ParallelLogger::logTrace(" - Dropping any time_series temporary tables that maybe present at start up.")
   DatabaseConnector::renderTranslateExecuteSql(
